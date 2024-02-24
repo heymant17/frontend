@@ -1,0 +1,20 @@
+{
+  "name": "Review Classifier",
+  "manifest_version": 3,
+  "version": "1.0",
+  "description": "Detect fake reviews on websites.",
+  "permissions": ["tabs", "activeTab", "contextMenus", "notifications"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  }
+}
